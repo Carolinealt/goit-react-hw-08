@@ -1,5 +1,5 @@
 const HomePage = () => {
-  return <></>;
+  return <>это тудушка и список контактов. залогинься или зарегайся. </>;
 };
 
 export default HomePage;

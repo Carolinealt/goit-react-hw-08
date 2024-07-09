@@ -1,9 +1,24 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
+import axios from "axios";
 
-export const register = createAsyncThunk("auth/register", async () => {});
+axios.defaults.baseURL = "https://connections-api.goit.global/";
 
-export const login = createAsyncThunk("auth/login", async () => {});
+export const register = createAsyncThunk(
+  "auth/register",
+  async (userData, { rejectWithValue }) => {
+    try {
+      console.log("userData :>> ", userData);
+      const { data } = await axios.post("users/signup", userData);
+      return data;
+    } catch (error) {
+      console.log("error :>> ", error);
+      return rejectWithValue(error.message);
+    }
+  }
+);
 
-export const logout = createAsyncThunk("auth/logout", async () => {});
+// export const login = createAsyncThunk("auth/login", async () => {});
 
-export const refreshUser = createAsyncThunk("auth/refresh", async () => {});
+// export const logout = createAsyncThunk("auth/logout", async () => {});
+
+// export const refreshUser = createAsyncThunk("auth/refresh", async () => {});
