@@ -11,7 +11,6 @@ export const register = createAsyncThunk(
       const { data } = await axios.post("users/signup", userData);
       return data;
     } catch (error) {
-      console.log("error :>> ", error);
       return rejectWithValue(error.message);
     }
   }
