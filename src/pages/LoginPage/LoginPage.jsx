@@ -1,6 +1,12 @@
+import { useDispatch } from "react-redux";
 import LoginForm from "../../components/LoginForm/LoginForm";
+import { login } from "../../redux/auth/operations";
 
 const LoginPage = () => {
-  return <LoginForm />;
+  const dispatch = useDispatch();
+  const handleSubmit = (userData) => {
+    dispatch(login(userData));
+  };
+  return <LoginForm submit={handleSubmit} />;
 };
 export default LoginPage;
