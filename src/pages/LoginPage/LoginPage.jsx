@@ -9,7 +9,7 @@ const LoginPage = () => {
   };
   return (
     <div>
-      <LoginForm submit={handleSubmit} />;
+      <LoginForm submit={handleSubmit} />
     </div>
   );
 };

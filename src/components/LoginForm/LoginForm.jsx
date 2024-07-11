@@ -24,7 +24,7 @@ const LoginForm = ({ submit }) => {
         </label>
 
         <Field name="password" type="password" />
-        <button type="submit">register</button>
+        <button type="submit">login</button>
       </Form>
     </Formik>
   );

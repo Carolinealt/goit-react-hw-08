@@ -10,6 +10,7 @@ const AppBar = () => {
     <div className={css.container}>
       <Navigation />
       {isLogedIn ? <UserMenu /> : <AuthNav />}
+      
     </div>
   );
 };

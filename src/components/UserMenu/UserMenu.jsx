@@ -1,7 +1,7 @@
 const UserMenu = () => {
   return (
     <div>
-      <h1>hello, u r in</h1>
+      <h3>hello, u r in</h3>
       <button>logout</button>
     </div>
   );
