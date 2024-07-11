@@ -7,6 +7,10 @@ const LoginPage = () => {
   const handleSubmit = (userData) => {
     dispatch(login(userData));
   };
-  return <LoginForm submit={handleSubmit} />;
+  return (
+    <div>
+      <LoginForm submit={handleSubmit} />;
+    </div>
+  );
 };
 export default LoginPage;
