@@ -8,6 +8,8 @@ import { Suspense, useEffect } from "react";
 import AppBar from "./components/AppBar/AppBar";
 import { useDispatch } from "react-redux";
 import { currentOp } from "./redux/auth/operations";
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
+import PublicRoute from "./components/PublicRoute/PublicRoute";
 
 function App() {
   const dispatch = useDispatch();
@@ -21,9 +23,13 @@ function App() {
       <Suspense fallback={null}>
         <Routes>
           <Route path="/" element={<HomePage />}></Route>
-          <Route path="/register" element={<RegistrationPage />}></Route>
-          <Route path="/login" element={<LoginPage />}></Route>
-          <Route path="/contacts" element={<ContactsPage />}></Route>
+          <Route element={<PublicRoute />}>
+            <Route path="/register" element={<RegistrationPage />}></Route>
+            <Route path="/login" element={<LoginPage />}></Route>
+          </Route>
+          <Route element={<PrivateRoute />}>
+            <Route path="/contacts" element={<ContactsPage />}></Route>
+          </Route>
         </Routes>
       </Suspense>
     </div>
