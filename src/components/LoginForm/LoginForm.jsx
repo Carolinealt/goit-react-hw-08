@@ -1,6 +1,7 @@
 import { Field, Form, Formik } from "formik";
 import { useId } from "react";
 import css from "./LoginForm.module.css";
+import { Button } from "@mui/material";
 const LoginForm = ({ submit }) => {
   const emailId = useId();
   const passwordId = useId();
@@ -24,7 +25,7 @@ const LoginForm = ({ submit }) => {
         </label>
 
         <Field name="password" type="password" />
-        <button type="submit">login</button>
+        <Button type="submit">login</Button>
       </Form>
     </Formik>
   );
