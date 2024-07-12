@@ -66,3 +66,8 @@ input {
   font-family: inherit;
   margin: 5px;
 }
+
+a{
+  color: whitesmoke;
+  font-size: 30px;
+}

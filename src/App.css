@@ -4,3 +4,8 @@
   padding: 2rem;
   text-align: center;
 }
+
+.container{
+  min-width: 600px;
+
+}

@@ -19,7 +19,7 @@ function App() {
   }, [dispatch]);
 
   return (
-    <div>
+    <div className="container">
       <AppBar />
       <Suspense fallback={null}>
         <Routes>
