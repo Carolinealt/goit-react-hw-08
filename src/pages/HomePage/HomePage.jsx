@@ -9,7 +9,7 @@ const HomePage = () => {
       {isLogedIn ? (
         <p>Welocome, {name}</p>
       ) : (
-        <p>Please, check your autorization</p>
+        <h3>Please, check your autorization</h3>
       )}
     </>
   );
