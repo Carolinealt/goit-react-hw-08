@@ -34,10 +34,12 @@ const authSlice = createSlice({
       })
       .addCase(refreshUser.fulfilled, (state, { payload }) => {
         state.isLoggedIn = true;
-        state.user = payload.user;
+        state.user = payload;
       })
       .addCase(refreshUser.rejected, (state) => {
         state.token = null;
+        state.user = { name: "", email: "" };
+        state.isLoggedIn = false;
       });
   },
 });
