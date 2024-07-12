@@ -13,6 +13,7 @@ import PublicRoute from "./components/PublicRoute/PublicRoute";
 
 function App() {
   const dispatch = useDispatch();
+  
   useEffect(() => {
     dispatch(refreshUser());
   }, [dispatch]);

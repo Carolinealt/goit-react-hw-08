@@ -1,6 +1,7 @@
 import { Field, Form, Formik } from "formik";
 import { useId } from "react";
 import css from "./RegistrationForm.module.css";
+import CustomButton from "../styledComponents/Button";
 const RegistrationForm = ({ submit }) => {
   const nameId = useId();
   const emailId = useId();
@@ -29,7 +30,9 @@ const RegistrationForm = ({ submit }) => {
         </label>
 
         <Field name="password" type="password" />
-        <button type="submit">register</button>
+        <CustomButton variant="contained" type="submit">
+          Register
+        </CustomButton>
       </Form>
     </Formik>
   );
