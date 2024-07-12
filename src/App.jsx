@@ -7,14 +7,14 @@ import ContactsPage from "./pages/ContactsPage/ContactsPage";
 import { Suspense, useEffect } from "react";
 import AppBar from "./components/AppBar/AppBar";
 import { useDispatch } from "react-redux";
-import { currentOp } from "./redux/auth/operations";
+import { refreshUser } from "./redux/auth/operations";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import PublicRoute from "./components/PublicRoute/PublicRoute";
 
 function App() {
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(currentOp());
+    dispatch(refreshUser());
   }, [dispatch]);
 
   return (
