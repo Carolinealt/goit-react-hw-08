@@ -1,9 +1,9 @@
-import { contactsReducer } from "./contacts/contactsSlice";
 import { combineReducers } from "redux";
-import { filterReducer } from "./filters/filterSlice";
+import { filterReducer } from "./filters/slice";
 import { authReducer } from "./auth/slice";
 import { persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
+import { contactsReducer } from "./contacts/slice";
 
 const persistConfig = {
   key: "root",
