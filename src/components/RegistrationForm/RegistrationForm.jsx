@@ -2,12 +2,15 @@ import { Field, Form, Formik } from "formik";
 import { useId } from "react";
 import css from "./RegistrationForm.module.css";
 import CustomButton from "../styledComponents/Button";
-const RegistrationForm = ({ submit }) => {
+import { useDispatch } from "react-redux";
+import { register } from "../../redux/auth/operations";
+const RegistrationForm = () => {
   const nameId = useId();
   const emailId = useId();
   const passwordId = useId();
+  const dispatch = useDispatch();
   const handleSubmit = (values, actions) => {
-    submit(values);
+    dispatch(register(values));
     actions.resetForm();
   };
   return (
