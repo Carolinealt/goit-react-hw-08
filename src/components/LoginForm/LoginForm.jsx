@@ -2,12 +2,15 @@ import { Field, Form, Formik } from "formik";
 import { useId } from "react";
 import css from "./LoginForm.module.css";
 import CustomButton from "../styledComponents/Button";
+import { useDispatch } from "react-redux";
+import { login } from "../../redux/auth/operations";
 
-const LoginForm = ({ submit }) => {
+const LoginForm = () => {
   const emailId = useId();
   const passwordId = useId();
+  const dispatch = useDispatch();
   const handleSubmit = (values, actions) => {
-    submit(values);
+    dispatch(login(values));
     actions.resetForm();
   };
   return (
