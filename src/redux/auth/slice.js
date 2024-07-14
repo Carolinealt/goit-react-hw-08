@@ -32,14 +32,21 @@ const authSlice = createSlice({
         };
         state.token = null;
       })
+      .addCase(refreshUser.pending, (state) => {
+        state.isRefreshing = true;
+      })
       .addCase(refreshUser.fulfilled, (state, { payload }) => {
         state.isLoggedIn = true;
         state.user = payload;
+        state.isRefreshing = false;
+
       })
       .addCase(refreshUser.rejected, (state) => {
         state.token = null;
         state.user = { name: "", email: "" };
         state.isLoggedIn = false;
+        state.isRefreshing = false;
+
       });
   },
 });
