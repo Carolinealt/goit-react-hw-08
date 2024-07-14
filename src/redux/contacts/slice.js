@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchContacts, addContact, deleteContact } from "./contactsOps";
+import { fetchContacts, addContact, deleteContact } from "./operations.js";
 import { logout } from "../auth/operations";
 
 const contactsSlice = createSlice({
@@ -30,7 +30,6 @@ const contactsSlice = createSlice({
       })
       .addCase(addContact.fulfilled, (state, action) => {
         state.loading = false;
-        console.log("payload :>> ", action.payload);
         state.items = [...state.items, action.payload];
       })
       .addCase(addContact.rejected, (state) => {

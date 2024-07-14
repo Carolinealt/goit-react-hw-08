@@ -10,10 +10,11 @@ import { useDispatch } from "react-redux";
 import { refreshUser } from "./redux/auth/operations";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import PublicRoute from "./components/PublicRoute/PublicRoute";
+import Layout from "./components/Layout/Layout";
 
 function App() {
   const dispatch = useDispatch();
-  
+
   useEffect(() => {
     dispatch(refreshUser());
   }, [dispatch]);
@@ -22,16 +23,19 @@ function App() {
     <div className="container">
       <AppBar />
       <Suspense fallback={null}>
-        <Routes>
-          <Route path="/" element={<HomePage />}></Route>
-          <Route element={<PublicRoute />}>
-            <Route path="/register" element={<RegistrationPage />}></Route>
-            <Route path="/login" element={<LoginPage />}></Route>
-          </Route>
-          <Route element={<PrivateRoute />}>
-            <Route path="/contacts" element={<ContactsPage />}></Route>
-          </Route>
-        </Routes>
+        <Layout>
+          <Routes>
+            <Route path="/" element={<HomePage />}></Route>
+            <Route element={<PublicRoute />}>
+              <Route path="/register" element={<RegistrationPage />}></Route>
+              <Route path="/login" element={<LoginPage />}></Route>
+            </Route>
+            <Route element={<PrivateRoute />}>
+              <Route path="/contacts" element={<ContactsPage />}></Route>
+            </Route>
+          </Routes>
+
+        </Layout>
       </Suspense>
     </div>
   );
